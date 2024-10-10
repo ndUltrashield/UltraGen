@@ -192,7 +192,7 @@ p {
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  gap: 80px;
+  gap: 140px;
   padding-left: 10px;
 }
 
@@ -303,6 +303,7 @@ th {
   flex-direction: column;
   gap: 10px;
   max-width: 600px;
+  padding-bottom: 64px;
 }
 
 .cert-head,
@@ -365,6 +366,18 @@ span {
   font-size: 12px;
 }
 
+.exp_greeting {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 4px;
+}
+
+.exp_greeting p {
+  font-size: 12px;
+}
+
 .stamp {
   width: 80px;
   margin-top: 16px;
@@ -389,8 +402,12 @@ span {
 
 .cert-content ul {
   padding-left: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .cert-content ul li {
   font-size: 12px;
+  line-height: 1.4;
 }

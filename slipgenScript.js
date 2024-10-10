@@ -18,16 +18,16 @@ document.getElementById("generate-pdf").addEventListener("click", function () {
   var conv_allowances_actual = document.getElementById(
     "conv_allowances_actual"
   ).value;
-  var other_allowances_actual = document.getElementById(
-    "other_allowances_actual"
-  ).value;
-  var incentive_actual = document.getElementById("incentive_actual").value;
+  // var other_allowances_actual = document.getElementById(
+  //   "other_allowances_actual"
+  // ).value;
+  // var incentive_actual = document.getElementById("incentive_actual").value;
 
   var basic_earned = document.getElementById("basic_earned").value;
-  var hra_earned = document.getElementById("hra_earned").value;
-  var conv_allowances_earned = document.getElementById(
-    "conv_allowances_earned"
-  ).value;
+  // var hra_earned = document.getElementById("hra_earned").value;
+  // var conv_allowances_earned = document.getElementById(
+  //   "conv_allowances_earned"
+  // ).value;
   var other_allowances_earned = document.getElementById(
     "other_allowances_earned"
   ).value;
@@ -43,38 +43,29 @@ document.getElementById("generate-pdf").addEventListener("click", function () {
   var basic_actual_calc = fillWithZero(basic_actual);
   var hra_actual_calc = fillWithZero(hra_actual);
   var conv_allowances_actual_calc = fillWithZero(conv_allowances_actual);
-  var other_allowances_actual_calc = fillWithZero(other_allowances_actual);
-  var incentive_actual_calc = fillWithZero(incentive_actual);
+  // var other_allowances_actual_calc = fillWithZero(other_allowances_actual);
+  // var incentive_actual_calc = fillWithZero(incentive_actual);
 
   var basic_earned_calc = fillWithZero(basic_earned);
-  var hra_earned_calc = fillWithZero(hra_earned);
-  var conv_allowances_earned_calc = fillWithZero(conv_allowances_earned);
+  // var hra_earned_calc = fillWithZero(hra_earned);
+  // var conv_allowances_earned_calc = fillWithZero(conv_allowances_earned);
   var other_allowances_earned_calc = fillWithZero(other_allowances_earned);
   var incentive_earned_calc = fillWithZero(incentive_earned);
+
   var medical_insurance_calc = fillWithZero(medical_insurance);
   var pf_calc = fillWithZero(pf);
 
   var gross_total =
-    basic_actual_calc +
-    hra_actual_calc +
-    conv_allowances_actual_calc +
-    other_allowances_actual_calc +
-    incentive_actual_calc;
+    basic_actual_calc + hra_actual_calc + conv_allowances_actual_calc;
 
   var net_pay =
     basic_earned_calc +
-    hra_earned_calc +
-    conv_allowances_earned_calc +
+    hra_actual_calc +
+    conv_allowances_actual_calc +
     other_allowances_earned_calc +
     incentive_earned_calc;
 
-  var net_total =
-    basic_earned_calc +
-    hra_earned_calc +
-    conv_allowances_earned_calc +
-    other_allowances_earned_calc +
-    incentive_earned_calc -
-    (medical_insurance_calc + pf_calc);
+  var net_total = net_pay - (medical_insurance_calc + pf_calc);
 
   document.getElementById("pay-month-placeholder").textContent = pay_month;
   document.getElementById("name-placeholder").textContent = name;
@@ -95,16 +86,15 @@ document.getElementById("generate-pdf").addEventListener("click", function () {
   document.getElementById("conv_allowances_actual-placeholder").textContent =
     conv_allowances_actual;
   document.getElementById("other_allowances_actual-placeholder").textContent =
-    other_allowances_actual;
-  document.getElementById("incentive_actual-placeholder").textContent =
-    incentive_actual;
+    "";
+  document.getElementById("incentive_actual-placeholder").textContent = "";
   document.getElementById("gross_total-placeholder").textContent = gross_total;
 
   document.getElementById("basic_earned-placeholder").textContent =
     basic_earned;
-  document.getElementById("hra_earned-placeholder").textContent = hra_earned;
+  document.getElementById("hra_earned-placeholder").textContent = hra_actual;
   document.getElementById("conv_allowances_earned-placeholder").textContent =
-    conv_allowances_earned;
+    conv_allowances_actual;
 
   document.getElementById("other_allowances_earned-placeholder").textContent =
     other_allowances_earned;
