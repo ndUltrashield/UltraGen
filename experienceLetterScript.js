@@ -20,17 +20,36 @@ addMoreBtn.addEventListener("click", () => {
   form.insertBefore(newInputGroup, form.querySelector(".submit-btn"));
 });
 
+// submitBtn.addEventListener("click", (e) => {
+//   e.preventDefault();
+//   // Clear previous results
+//   resultList.innerHTML = "";
+
+//   // Get all input fields data and create bullet list
+//   const inputFields = document.querySelectorAll(".input-field");
+//   inputFields.forEach((field) => {
+//     const value = field.value;
+//     console.log(value);
+//     if (value.trim()) {
+//       const listItem = document.createElement("li");
+//       listItem.textContent = value;
+//       resultList.appendChild(listItem);
+//     }
+//   });
+// });
+
 submitBtn.addEventListener("click", (e) => {
   e.preventDefault();
   // Clear previous results
   resultList.innerHTML = "";
 
-  // Get all input fields data and create bullet list
+  // Get all input fields data and create a bullet list
   const inputFields = document.querySelectorAll(".input-field");
   inputFields.forEach((field) => {
     const value = field.value;
-    console.log(value);
-    if (value.trim()) {
+
+    // Check if the field has a valid value before calling trim
+    if (value && typeof value === "string" && value.trim()) {
       const listItem = document.createElement("li");
       listItem.textContent = value;
       resultList.appendChild(listItem);
