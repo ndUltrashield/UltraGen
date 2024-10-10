@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic PDF Generator</title>
+  </head>
+  <body>
+    <h1>Dynamic PDF Generator with Custom Logo</h1>
+
+    <!-- Form for logo upload and other details -->
+    <form id="pdfForm">
+      <label for="logoUpload">Upload Logo:</label>
+      <input
+        type="file"
+        id="logoUpload"
+        accept="image/*"
+        required
+      /><br /><br />
+
+      <!-- Other form fields go here -->
+      <input type="text" id="name" placeholder="Enter Name" /><br /><br />
+
+      <button type="submit">Generate PDF</button>
+    </form>
+
+    <!-- Placeholder for the preview of the logo -->
+    <img
+      id="logoPreview"
+      src=""
+      alt="Logo Preview"
+      style="display: none; width: 100px; border: 1px solid black"
+    />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script>
+      // Logo preview on file upload
+      document
+        .getElementById("logoUpload")
+        .addEventListener("change", function (event) {
+          const file = event.target.files[0];
+          const reader = new FileReader();
+
+          reader.onload = function (e) {
+            const preview = document.getElementById("logoPreview");
+            preview.src = e.target.result;
+            preview.style.display = "block";
+          };
+
+          reader.readAsDataURL(file);
+        });
+
+      // Generate PDF with dynamic logo in a fixed placeholder
+      document
+        .getElementById("pdfForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          const { jsPDF } = window.jspdf;
+          const pdf = new jsPDF();
+
+          const name = document.getElementById("name").value;
+
+          // Adding text
+          pdf.text(`Name: ${name}`, 10, 80); // Text starts below the logo placeholder
+
+          // Fixed placeholder for the logo
+          const logo = document.getElementById("logoPreview");
+          if (logo.src) {
+            // Coordinates (x, y) and fixed size (width, height)
+            pdf.addImage(logo.src, "PNG", 10, 10, 50, 50); // Adjust position and size as needed
+          } else {
+            // Optionally, you can draw a rectangle where the logo should be if no logo is uploaded
+            pdf.rect(10, 10, 50, 50); // Draw a rectangle for the logo placeholder
+            pdf.text("Logo Placeholder", 15, 35); // Text inside the rectangle
+          }
+
+          // Download the generated PDF
+          pdf.save("generated.pdf");
+
+          // Clear the logo preview (image is discarded after PDF generation)
+          document.getElementById("logoPreview").style.display = "none";
+          document.getElementById("pdfForm").reset();
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ultrashield-InternCert- Beta</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="ultrashield-logo.png" type="image/png" />
+  </head>
+  <body>
+    <div class="header">
+      <a href="home.html">
+        <img src="logo-ultrashield.svg" alt="" />
+      </a>
+    </div>
+
+    <div class="container">
+      <form>
+        <h3 class="title">Ultrashield-InternCert- Beta</h3>
+        <hr />
+        <h2>Internship Certificate details</h2>
+        <div class="detail-form">
+          <div class="input-field">
+            <label for="intern_date">Date:</label>
+            <input
+              type="text"
+              id="intern_date"
+              placeholder="Enter the date (dd-mm-yy)"
+              required
+            />
+          </div>
+          <div class="input-field">
+            <label for="intern_name">Name:</label>
+            <input
+              type="text"
+              id="intern_name"
+              placeholder="Enter Intern Name"
+              required
+            />
+          </div>
+          <div class="input-field">
+            <label for="intern_pos">Position:</label>
+            <input
+              type="text"
+              id="intern_pos"
+              placeholder="Enter Intern Position"
+              required
+            />
+          </div>
+
+          <div class="input-field">
+            <label for="intern_joining">Date of Joining:</label>
+            <input
+              type="text"
+              id="intern_joining"
+              placeholder="Enter Date of Joining (dd-mm-yyyy)"
+              required
+            />
+          </div>
+          <div class="input-field">
+            <label for="intern_complete">Date of Completion:</label>
+            <input
+              type="text"
+              id="intern_complete"
+              placeholder="Enter Date of Completion (dd-mm-yyyy)"
+              required
+            />
+          </div>
+          <div class="radio-field">
+            <label>Gender:</label>
+            <input type="radio" id="male" name="gender" value="male" required />
+            <label for="male">Male</label>
+
+            <input
+              type="radio"
+              id="female"
+              name="gender"
+              value="female"
+              required
+            />
+            <label for="female">Female</label><br />
+          </div>
+        </div>
+        <hr />
+        <input type="reset" value="Reset all form data" class="reset-btn" />
+      </form>
+      <button id="generate-certificate">Generate Certificate</button>
+      <hr />
+
+      <!-- The template -->
+      <!-- <div class="template" id="pdf-template">
+      <p id="days-payable-container" class="hidden" style="font-size: 8px">
+        <strong>Days payable:</strong>
+        <span id="days-payable-placeholder">[Days payable]</span>
+      </p>
+    </div> -->
+      <div class="cert-template" id="pdf-template">
+        <div class="cert-head">
+          <img src="header.svg" alt="Ultrashield-Logo" class="cert-header" />
+        </div>
+        <div class="cert-content">
+          <div class="date-section">
+            <p class="date-title" style="font-size: 12px">Date:</p>
+            <span
+              id="cert-date-placeholder"
+              style="font-size: 12px; font-weight: bold"
+              >[Date]
+            </span>
+          </div>
+          <br />
+          <p class="center-txt">TO WHOMSOEVER IT MAY CONCERN</p>
+          <br />
+          <div class="cert-data">
+            <p class="fixed-txt">
+              This is to certify that
+              <span class="intern-name" id="intern_name-placeholder"
+                >[Intern Name]</span
+              >
+              has completed
+              <span class="pronouns possesivePronoun-placeholder">his/her</span>
+              internship as a
+              <span class="intern-position" id="intern_pos-placeholder"
+                >[Intern Position]</span
+              >
+              at
+              <span class="intern-organization"
+                >Ultrashield Technology Pvt. Ltd.</span
+              >
+              from&nbsp;
+              <span class="intern-start-date" id="intern_joining-placeholder"
+                >[Joining Date]</span
+              >&nbsp; to&nbsp;
+              <span class="intern-end-date" id="intern_complete-placeholder"
+                >[Completion Date]</span
+              >. <br /><br />During
+              <span class="pronouns possesivePronoun-placeholder">his/her</span>
+              internship,
+              <span class="pronouns subjectPronoun-placeholder">he/she</span>
+              demonstrated a high level of commitment, discipline, and
+              self-motivation in performing
+              <span class="pronouns possesivePronoun-placeholder">his/her</span>
+              duties.
+              <span class="pronouns possesivePronoun-placeholder upperCase"
+                >his/her</span
+              >
+              proactive approach and enthusiasm contributed positively to our
+              team's objectives.<br /><br />We are confident that
+              <span class="pronouns possesivePronoun-placeholder">his/her</span>
+              dedication and passion will continue to lead
+              <span class="pronouns personalPronoun-placeholder">him/her</span>
+              to success in all future endeavors. We wish
+              <span class="pronouns personalPronoun-placeholder">him/her</span>
+              all the best for a bright and prosperous future.
+            </p>
+            <div class="greeting">
+              <p>Sincerely,</p>
+              <img src="ultrasheld-stampV2.png" alt="" class="stamp" />
+              <p>HR Department</p>
+              <p>Ultrashield Technology Pvt. Ltd.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Button to download the PDF, hidden initially -->
+      <button id="download-pdf">Download Certificate</button>
+    </div>
+
+    <!-- Include updated jsPDF and html2canvas libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="internCertScript.js"></script>
+  </body>
+</html>

@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ultrashield-PaySlipGen- Beta</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="ultrashield-logo.png" type="image/png" />
+  </head>
+  <body>
+    <div class="header">
+      <a href="home.html">
+        <img src="logo-ultrashield.svg" alt="" />
+      </a>
+    </div>
+    <div class="container">
+      <!-- <a href="test.html">Upload wala</a> -->
+      <form>
+        <h3 class="title">Ultrashield-PaySlipGen- Beta</h3>
+        <hr />
+        <h2>Basic details</h2>
+        <div class="detail-form">
+          <div class="input-field">
+            <label for="pay_month">Payslip for the month-year:</label>
+            <input
+              type="text"
+              id="pay_month"
+              placeholder="Enter the payslip date (mm-yy)"
+              required
+            />
+          </div>
+
+          <div class="input-field">
+            <label for="name">Name:</label>
+            <input
+              type="text"
+              id="name"
+              placeholder="Enter the name"
+              required
+            />
+          </div>
+
+          <div class="input-field">
+            <label for="designation">Desgination:</label>
+            <input id="designation" placeholder="Enter the designation" />
+          </div>
+
+          <div class="input-field">
+            <label for="department">Department:</label>
+            <input id="department" placeholder="Enter the department" />
+          </div>
+
+          <div class="input-field">
+            <label for="doj">Date of Joining:</label>
+            <input id="doj" placeholder="Enter the date of joining(dd-mm-yy)" />
+          </div>
+
+          <div class="input-field">
+            <label for="email">Email:</label>
+            <input id="email" placeholder="Enter the email" />
+          </div>
+
+          <div class="input-field">
+            <label for="emp_code">Emp Code:</label>
+            <input id="emp_code" placeholder="Enter the employee code" />
+          </div>
+
+          <div class="input-field">
+            <label for="pan">PAN no:</label>
+            <input id="pan" placeholder="Enter the PAN number" />
+          </div>
+
+          <div class="input-field">
+            <label for="bank_name">Bank name:</label>
+            <input id="bank_name" placeholder="Enter the bank name" />
+          </div>
+
+          <div class="input-field">
+            <label for="bank_acc_no">Bank account number:</label>
+            <input id="bank_acc_no" placeholder="Enter the bank account no." />
+          </div>
+
+          <div class="input-field">
+            <label for="days_payable">Days payable:</label>
+            <input
+              type="number"
+              id="days_payable"
+              placeholder="Enter the no. of days payable"
+            />
+          </div>
+        </div>
+        <hr />
+        <h2>Pay details</h2>
+        <hr />
+        <h3>Actual</h3>
+        <div class="detail-form">
+          <div class="input-field">
+            <label for="basic_actual">Basic-actual:</label>
+            <input
+              type="number"
+              id="basic_actual"
+              placeholder="Enter the basic-actual pay"
+            />
+          </div>
+
+          <div class="input-field">
+            <label for="hra_actual">HRA-actual:</label>
+            <input
+              type="number"
+              id="hra_actual"
+              placeholder="Enter the HRA-actual"
+            />
+          </div>
+
+          <div class="input-field">
+            <label for="conv_allowances_actual">Conv. Allowances-actual:</label>
+            <input
+              type="number"
+              id="conv_allowances_actual"
+              placeholder="Enter the conv. allowances-actual"
+            />
+          </div>
+
+          <div class="input-field">
+            <label for="other_allowances_actual"
+              >Other Allowances-actual:</label
+            >
+            <input
+              type="number"
+              id="other_allowances_actual"
+              placeholder="Enter other allowances-actual"
+            />
+          </div>
+
+          <div class="input-field">
+            <label for="incentive_actual">Incentive-actual:</label>
+            <input
+              type="number"
+              id="incentive_actual"
+              placeholder="Enter incentive-actual"
+            />
+          </div>
+        </div>
+        <hr />
+        <h3>Earned</h3>
+        <div class="detail-form">
+          <div class="input-field">
+            <label for="basic_earned">Basic-earned:</label>
+            <input
+              type="number"
+              id="basic_earned"
+              placeholder="Enter the basic-earned pay"
+            />
+          </div>
+
+          <div class="input-field">
+            <label for="hra_earned">HRA-earned:</label>
+            <input
+              type="number"
+              id="hra_earned"
+              placeholder="Enter the HRA-earned"
+            />
+          </div>
+
+          <div class="input-field">
+            <label for="conv_allowances_earned">Conv. Allowances-earned:</label>
+            <input
+              type="number"
+              id="conv_allowances_earned"
+              placeholder="Enter the conv. allowances-earned"
+            />
+          </div>
+
+          <div class="input-field">
+            <label for="other_allowances_earned"
+              >Other Allowances-earned:</label
+            >
+            <input
+              type="number"
+              id="other_allowances_earned"
+              placeholder="Enter other allowances-earned"
+            />
+          </div>
+
+          <div class="input-field">
+            <label for="incentive_earned">Incentive-earned:</label>
+            <input
+              type="number"
+              id="incentive_earned"
+              placeholder="Enter incentive-earned"
+            />
+          </div>
+        </div>
+        <hr />
+        <h3>Deductions</h3>
+        <div class="detail-form">
+          <div class="input-field">
+            <label for="medical_insurance">Health Insurance:</label>
+            <input
+              type="number"
+              id="medical_insurance"
+              placeholder="Enter the medical insurance installment"
+            />
+          </div>
+
+          <div class="input-field">
+            <label for="pf">PF:</label>
+            <input type="number" id="pf" placeholder="Enter the pf deducted" />
+          </div>
+        </div>
+        <hr />
+        <input type="reset" value="Reset all form data" class="reset-btn" />
+      </form>
+      <button id="generate-pdf">Generate Payslip</button>
+      <hr />
+
+      <!-- The template -->
+      <!-- <div class="template" id="pdf-template">
+      <p id="days-payable-container" class="hidden" style="font-size: 8px">
+        <strong>Days payable:</strong>
+        <span id="days-payable-placeholder">[Days payable]</span>
+      </p>
+    </div> -->
+      <div class="template" id="pdf-template">
+        <div class="pdf-head">
+          <img
+            src="logo-ultrashield.svg"
+            alt="Ultrashield-Logo"
+            class="company_logo"
+          />
+          <p class="address">
+            710, 7th FLOOR, TOWER-A,<br />
+            PLOT A-40, I-THUM, SECTOR 62, NOIDA, U.P. 201301
+          </p>
+        </div>
+
+        <div class="month-section">
+          <p class="month-title">Payslip for the month of:</p>
+          <span
+            id="pay-month-placeholder"
+            style="font-size: 12px; font-weight: bold"
+            >[Payslip for the month of]
+          </span>
+        </div>
+        <br />
+
+        <div class="emp-details">
+          <div class="section">
+            <table>
+              <tr>
+                <td class="emp-details-label">Name</td>
+                <td class="emp-details-data" id="name-placeholder">[Name]</td>
+              </tr>
+              <tr>
+                <td class="emp-details-label">Designation</td>
+                <td class="emp-details-data" id="designation-placeholder">
+                  [Designation]
+                </td>
+              </tr>
+              <tr>
+                <td class="emp-details-label">Department</td>
+                <td class="emp-details-data" id="department-placeholder">
+                  [Department]
+                </td>
+              </tr>
+              <tr>
+                <td class="emp-details-label">Date of joining</td>
+                <td class="emp-details-data" id="doj-placeholder">
+                  [Date of joining]
+                </td>
+              </tr>
+              <tr>
+                <td class="emp-details-label">Email</td>
+                <td class="emp-details-data" id="email-placeholder">[Email]</td>
+              </tr>
+            </table>
+          </div>
+          <div class="section">
+            <table>
+              <tr>
+                <td class="emp-details-label">Emp code</td>
+                <td class="emp-details-data" id="emp-code-placeholder">
+                  [Emp Code]
+                </td>
+              </tr>
+              <tr>
+                <td class="emp-details-label">pan no.</td>
+                <td class="emp-details-data" id="pan-placeholder">[PAN no]</td>
+              </tr>
+              <tr>
+                <td class="emp-details-label">bank name</td>
+                <td class="emp-details-data" id="bank-name-placeholder">
+                  [Bank name]
+                </td>
+              </tr>
+              <tr>
+                <td class="emp-details-label">bank account number</td>
+                <td class="emp-details-data" id="bank-acc-no-placeholder">
+                  [Bank account number]
+                </td>
+              </tr>
+              <tr>
+                <td class="emp-details-label">days payable</td>
+                <td class="emp-details-data" id="days-payable-placeholder">
+                  [Days payable]
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <br />
+        <!-- <hr /> -->
+
+        <div class="pay-details">
+          <table>
+            <tr>
+              <th class="first-col">Earnings</th>
+              <th class="second-col">actual</th>
+              <th class="third-col">earned</th>
+            </tr>
+            <tr>
+              <td></td>
+            </tr>
+            <tr>
+              <td class="pay-details-label">basic</td>
+              <td class="actual-pay-details-data" id="basic_actual-placeholder">
+                [BASIC ACTUAL]
+              </td>
+              <td class="earned-pay-details-data" id="basic_earned-placeholder">
+                [BASIC EARNED]
+              </td>
+            </tr>
+            <tr>
+              <td class="pay-details-label">HRA</td>
+              <td class="actual-pay-details-data" id="hra_actual-placeholder">
+                [HRA]
+              </td>
+              <td class="earned-pay-details-data" id="hra_earned-placeholder">
+                [HRA]
+              </td>
+            </tr>
+            <tr>
+              <td class="pay-details-label">CONV. ALLOWANCES</td>
+              <td
+                class="actual-pay-details-data"
+                id="conv_allowances_actual-placeholder"
+              >
+                [CONV. ALLOWANCES]
+              </td>
+              <td
+                class="earned-pay-details-data"
+                id="conv_allowances_earned-placeholder"
+              >
+                [CONV. ALLOWANCES]
+              </td>
+            </tr>
+            <tr>
+              <td class="pay-details-label">OTHER ALLOWANCES</td>
+              <td
+                class="actual-pay-details-data"
+                id="other_allowances_actual-placeholder"
+              >
+                [OTHER ALLOWANCES]
+              </td>
+              <td
+                class="earned-pay-details-data"
+                id="other_allowances_earned-placeholder"
+              >
+                [OTHER ALLOWANCES]
+              </td>
+            </tr>
+            <tr>
+              <td class="pay-details-label">INCENTIVE</td>
+              <td
+                class="actual-pay-details-data"
+                id="incentive_actual-placeholder"
+              >
+                [INCENTIVE]
+              </td>
+              <td
+                class="earned-pay-details-data"
+                id="incentive_earned-placeholder"
+              >
+                [INCENTIVE]
+              </td>
+            </tr>
+            <tr>
+              <td class="pay-details-label gross_net">GROSS TOTAL</td>
+              <td
+                class="actual-pay-details-data"
+                id="gross_total-placeholder"
+                style="font-size: 12px"
+              >
+                [GROSS TOTAL]
+              </td>
+              <td
+                class="earned-pay-details-data"
+                id="net_total-placeholder"
+                style="font-size: 12px"
+              >
+                [NET total]
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+            </tr>
+            <tr>
+              <th
+                colspan="3"
+                class="first-col"
+                style="text-align: center; border: solid 1px #032641"
+              >
+                Deductions
+              </th>
+            </tr>
+            <tr>
+              <td></td>
+            </tr>
+            <tr>
+              <td class="pay-details-label">health insurance</td>
+              <td
+                class="actual-pay-details-data"
+                id="incentive_actual-placeholder"
+              ></td>
+              <td
+                class="earned-pay-details-data"
+                id="medical_insurance-placeholder"
+              >
+                [Health insurance]
+              </td>
+            </tr>
+            <tr>
+              <td class="pay-details-label">PF</td>
+              <td
+                class="actual-pay-details-data"
+                id="incentive_actual-placeholder"
+              ></td>
+              <td class="earned-pay-details-data" id="pf-placeholder">[Pf]</td>
+            </tr>
+            <tr>
+              <td></td>
+            </tr>
+            <tr style="background-color: #135e95; color: #fff">
+              <td class="pay-details-label gross_net">Net Pay</td>
+              <td class="actual-pay-details-data"></td>
+              <td
+                class="earned-pay-details-data"
+                id="final_net_total-placeholder"
+                style="font-size: 12px"
+              >
+                [NET PAY]
+              </td>
+            </tr>
+          </table>
+        </div>
+
+        <p id="net_total_words-container" style="font-size: 10px">
+          (<span id="net_total_words-placeholder">[NET PAY(in words)]</span>)
+        </p>
+
+        <p class="note_bottom">
+          *THIS IS COMPUTER GENERATED SALARY SLIP, DOES NOT REQUIRED SIGN &
+          STAMP.
+        </p>
+      </div>
+
+      <!-- Button to download the PDF, hidden initially -->
+      <button id="download-pdf">Download Payslip</button>
+    </div>
+
+    <!-- Include updated jsPDF and html2canvas libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="slipgenScript.js"></script>
+  </body>
+</html>
