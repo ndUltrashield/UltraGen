@@ -32,7 +32,7 @@ document.getElementById("generate-pdf").addEventListener("click", function () {
     "other_allowances_earned"
   ).value;
   var incentive_earned = document.getElementById("incentive_earned").value;
-  var medical_insurance = document.getElementById("medical_insurance").value;
+  var medical_insurance = 750;
   var pf = document.getElementById("pf").value;
 
   function fillWithZero(value) {
